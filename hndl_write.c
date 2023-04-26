@@ -75,9 +75,9 @@ int num_writer(int is_neg, int index, char bff[],
 		ch = '0';
 	if (is_neg)
 		ch_rem = '-';
-	else if (flg & F_P)
+	else if (flgs & F_P)
 		ch_rem = '+';
-	else if (flg & F_SP)
+	else if (flgs & F_SP)
 		ch_rem = ' ';
 
 	return (w_num(index, bff, flgs, width, prcsn,
@@ -122,7 +122,7 @@ int w_num(int index, char bff[],
 		{
 			if (ch_rem)
 				bff[--index] = ch_rem;
-			return (write(1, &bff[index], length) + write(1, &bff[1], x - 1));
+			return (write(1, &bff[index], len) + write(1, &bff[1], x - 1));
 		}
 		else if (!(flg & F_M) && ch == ' ')
 		{
@@ -257,5 +257,5 @@ int pntr_w(char bff[], int index, int len,
 	bff[--index] = '0';
 	if (ch_rem)
 		bff[--index] = ch_rem;
-	return (write(1, &bff[index], BUFF_SIZE - index - 1));
+	return (write(1, &bff[index], BFF_S - index - 1));
 }
