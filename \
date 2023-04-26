@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			prcsn = g_prcsn(format, &i, list);
 			s = g_s(format, &i);
 			++i;
-			prnt = cahr_hndl_w(format, &i, list, bff,
+			prnt = prnt_b(format, &i, list, bff,
 				flg, width, prcsn, s);
 			if (prnt == -1)
 				return (-1);

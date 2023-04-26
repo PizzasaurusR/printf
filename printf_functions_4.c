@@ -24,7 +24,7 @@ int can_prnt(char c)
  *
  * Return: Always 3
  */
-int app_hx_code(char, ascii_code, char bff[], int x)
+int app_hx_code(char ascii_code, char bff[], int x)
 {
 	char map_to[] = "0123456789ABCDEF";
 

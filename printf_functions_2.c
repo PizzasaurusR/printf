@@ -20,7 +20,7 @@ int unsgnd_prnt(va_list type, char bff[],
 	int x = BFF_S - 2;
 	unsigned long int n = va_arg(type, unsigned long int);
 
-	num = unsgnd_conv_s(n, s);
+	n = unsgnd_conv_s(n, s);
 
 	if (n == 0)
 		bff[x--] = '0';
@@ -143,7 +143,7 @@ int hex_print(va_list type, char arr_map[], char bff[],
 {
 	int x = BFF_S - 2;
 	unsigned long int n = va_arg(type, unsigned long int);
-	unsigned long int num_start = num;
+	unsigned long int num_start = n;
 
 	UNUSED(width);
 
