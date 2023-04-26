@@ -41,6 +41,9 @@ typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
 void prnt_b(char bff[], int *bff_i);
+va_list list(char bff[], int flg, int width, int prcsn, int s);
+int char_hndl_w(char c, char bff[],
+	int flg, int width, int prcsn, int s)
 
 /** Functions **/
 
