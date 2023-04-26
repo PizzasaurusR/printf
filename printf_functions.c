@@ -20,7 +20,7 @@ int prnt_char(va_list type, char bff[],
 {
 	char c = va_arg(type, int);
 
-	return (write_char_handle(c, bff, flg, s, width, prcsn));
+	return (char_hndl_w((c, bff, flg, s, width, prcsn));
 }
 
 /** Str print func **/
@@ -69,7 +69,7 @@ int prnt_string(va_list type, char bff[],
 	}
 	if (width > len)
 	{
-		if (flg & F_MINUS)
+		if (flg & F_M)
 		{
 			write(1, &string[0], len);
 			for (i = width - len; i > 0; i--)
@@ -97,7 +97,7 @@ int prnt_string(va_list type, char bff[],
  * Return: num char to print
  */
 int prnt_percent(va_list type, char bff[],
-	int flg, int width, int prcsn, int s);
+	int flg, int width, int prcsn, int s)
 {
 	UNUSED(type);
 	UNUSED(bff);
@@ -131,7 +131,7 @@ int prnt_int(va_list type, char bff[],
 	long int num = va_arg(type, long int);
 	unsigned long int x;
 
-	n = conv_s_num(num, s);
+	num = conv_s_num(num, s);
 
 	if (num == 0)
 		bff[i--] = '0';

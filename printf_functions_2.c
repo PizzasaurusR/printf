@@ -20,7 +20,7 @@ int unsgnd_prnt(va_list type, char bff[],
 	int x = BFF_S - 2;
 	unsigned long int n = va_arg(type, unsigned long int);
 
-	n = unsgnd_conv_s(n, s);
+	n = conv_s_unsgnd(n, s);
 
 	if (n == 0)
 		bff[x--] = '0';
@@ -29,7 +29,7 @@ int unsgnd_prnt(va_list type, char bff[],
 
 	while (n > 0)
 	{
-		bff[x--] = (num % 10) + '0';
+		bff[x--] = (n % 10) + '0';
 		n /= 10;
 	}
 

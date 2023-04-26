@@ -26,7 +26,7 @@ int can_prnt(char c)
  */
 int app_hx_code(char ascii_code, char bff[], int x)
 {
-	char map_to[] = "0123456789ABCDEF";
+	char arr_map[] = "0123456789ABCDEF";
 
 	if (ascii_code < 0)
 		ascii_code *= -1;
